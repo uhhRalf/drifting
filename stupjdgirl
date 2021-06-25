@@ -18,7 +18,7 @@ local Frame_3 = Instance.new("Frame")
 local Frame_4 = Instance.new("Frame")
 local Frame_5 = Instance.new("Frame")
 local TextButton_2 = Instance.new("TextButton")
-local TextLabel_5 = Instance.new("TextLabel")
+
 
 --Properties:
 
@@ -28,32 +28,32 @@ ScreenGui.ResetOnSpawn = false
 
 Frame.Parent = ScreenGui
 Frame.AnchorPoint = Vector2.new(0, 0.5)
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Frame.BackgroundTransparency = 0
-Frame.BorderColor3 = Color3.fromRGB(0, 255, 255)
-Frame.BorderSizePixel = 2
+Frame.BorderColor3 = Color3.fromRGB(242, 128, 191)
+Frame.BorderSizePixel = 4
 Frame.Position = UDim2.new(0, 0, 0.600000024, 0)
 Frame.Size = UDim2.new(0.150000006, 0, 0.300000012, 0)
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Size = UDim2.new(0.5, 0, 0.200000003, 0)
+TextLabel.Font = Enum.Font.SourceSansItalic
 TextLabel.Text = "Boost:"
 TextLabel.TextColor3 = Color3.fromRGB(255,255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
+TextLabel.TextScaled = false
+TextLabel.TextSize = 45
 TextLabel.TextWrapped = true
 
 TextBox.Parent = Frame
 TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.BackgroundTransparency = 1.000
-TextBox.Position = UDim2.new(0.600000024, 0, 0, 0)
-TextBox.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+TextBox.Position = UDim2.new(0.5, 0, 0, 0)
+TextBox.Size = UDim2.new(0.5, 0, 0.200000003, 0)
 TextBox.Font = Enum.Font.SourceSans
 TextBox.Text = "1000"
-TextBox.TextColor3 = Color3.fromRGB(0,255,255)
+TextBox.TextColor3 = Color3.fromRGB(242, 128, 191)
 TextBox.TextScaled = true
 TextBox.TextSize = 14.000
 TextBox.TextWrapped = true
@@ -61,11 +61,11 @@ TextBox.TextWrapped = true
 TextBox_2.Parent = Frame
 TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextBox_2.BackgroundTransparency = 1.000
-TextBox_2.Position = UDim2.new(0.600000024, 0, 0.600000024, 0)
-TextBox_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+TextBox_2.Position = UDim2.new(0.5, 0, 0.600000024, 0)
+TextBox_2.Size = UDim2.new(0.5, 0, 0.200000003, 0)
 TextBox_2.Font = Enum.Font.SourceSans
 TextBox_2.Text = game.Players.LocalPlayer.Name
-TextBox_2.TextColor3 = Color3.fromRGB(0,255,255)
+TextBox_2.TextColor3 = Color3.fromRGB(242, 128, 191)
 TextBox_2.TextScaled = true
 TextBox_2.TextSize = 14.000
 TextBox_2.TextWrapped = true
@@ -74,36 +74,36 @@ TextLabel_2.Parent = Frame
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
 TextLabel_2.Position = UDim2.new(0, 0, 0.200000003, 0)
-TextLabel_2.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Size = UDim2.new(0.5, 0, 0.200000003, 0)
+TextLabel_2.Font = Enum.Font.SourceSansItalic
 TextLabel_2.Text = "Type:"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
+TextLabel_2.TextScaled = false
+TextLabel_2.TextSize = 45
 TextLabel_2.TextWrapped = true
 
 TextLabel_3.Parent = Frame
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_3.BackgroundTransparency = 1.000
 TextLabel_3.Position = UDim2.new(0, 0, 0.400000006, 0)
-TextLabel_3.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Size = UDim2.new(0.5, 0, 0.200000003, 0)
+TextLabel_3.Font = Enum.Font.SourceSansItalic
 TextLabel_3.Text = "Toggle:"
 TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
+TextLabel_3.TextScaled = false
+TextLabel_3.TextSize = 45.000
 TextLabel_3.TextWrapped = true
 
 TextLabel_4.Parent = Frame
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_4.BackgroundTransparency = 1.000
 TextLabel_4.Position = UDim2.new(0, 0, 0.600000024, 0)
-TextLabel_4.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Size = UDim2.new(0.5, 0, 0.200000003, 0)
+TextLabel_4.Font = Enum.Font.SourceSansItalic
 TextLabel_4.Text = "Player:"
 TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
+TextLabel_4.TextScaled = false
+TextLabel_4.TextSize = 45.000
 TextLabel_4.TextWrapped = true
 
 TextButton.Parent = Frame
@@ -112,29 +112,17 @@ TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 1.000
 TextButton.Position = UDim2.new(0, 0, 1, 0)
 TextButton.Size = UDim2.new(1, 0, 0.150000006, 0)
-TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Font = Enum.Font.SourceSansItalic
 TextButton.Text = "(B to toggle GUI)"
-TextButton.TextColor3 = Color3.fromRGB(0, 255, 255)
+TextButton.TextColor3 = Color3.fromRGB(242, 128, 191)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
-TextLabel_5.Parent = Frame
-TextLabel_5.AnchorPoint = Vector2.new(0, 1)
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.Position = UDim2.new(0, 0, 75, 0)
-TextLabel_5.Size = UDim2.new(1, 0, 0.1, 0)
-TextLabel_5.Font = Enum.Font.SourceSansBold
-TextLabel_5.Text = "By stupjdgirl =)"
-TextLabel_5.TextColor3 = Color3.fromRGB(0, 255, 255)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
 
 Frame_3.Parent = Frame_2
 Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame_3.BackgroundColor3 = Color3.fromRGB(0,255,255)
+Frame_3.BackgroundColor3 = Color3.fromRGB(242, 128, 191)
 Frame_3.BorderSizePixel = 0
 Frame_3.LayoutOrder = 1
 Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -150,7 +138,7 @@ Frame_4.ZIndex = 5
 
 Frame_5.Parent = Frame_4
 Frame_5.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame_5.BackgroundColor3 = Color3.fromRGB(0,255,255)
+Frame_5.BackgroundColor3 = Color3.fromRGB(242, 128, 191)
 Frame_5.BorderSizePixel = 0
 Frame_5.LayoutOrder = 1
 Frame_5.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -159,11 +147,11 @@ Frame_5.Size = UDim2.new(1, 0, 1, 0)
 TextButton_2.Parent = Frame
 TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_2.BackgroundTransparency = 1.000
-TextButton_2.Position = UDim2.new(0.600000024, 0, 0.200000003, 0)
-TextButton_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
+TextButton_2.Position = UDim2.new(0.5, 0, 0.200000003, 0)
+TextButton_2.Size = UDim2.new(0.5, 0, 0.200000003, 0)
 TextButton_2.Font = Enum.Font.SourceSans
 TextButton_2.Text = "Drift"
-TextButton_2.TextColor3 = Color3.fromRGB(0,255,255)
+TextButton_2.TextColor3 = Color3.fromRGB(242, 128, 191)
 TextButton_2.TextScaled = true
 TextButton_2.TextSize = 14.000
 TextButton_2.TextWrapped = true
@@ -202,14 +190,32 @@ game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
 		ScreenGui.Enabled = not ScreenGui.Enabled
         game.StarterGui:SetCore("SendNotification", {
             Title = "Illegal Tune";
-            Text = "By stupjdgirl <3" ;
-            Icon = "";
-            Duration = 1;})
+            Text = "By stupjdgirl ;)" ;
+            Icon = "https://www.roblox.com/library/6397883320/Png-1";
+            Duration = 3;})
 	end
 end)
 
+function getPlayer(shortcut)
+    local player = nil
+  
+    local g = game.Players:GetPlayers()
+    for i = 1, #g do
+      if string.lower(string.sub(g[i].Name, 1, string.len(shortcut))) == string.lower(shortcut) then
+        player = g[i]
+        break
+      end
+    end
+  
+    return player
+  
+end
+
+
+
+
 function driftfunc()
-    local tryjng=require(game.Workspace.VehiclesFolder[tostring(TextBox_2.Text)]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
+    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
     tryjng.Boost = tonumber(TextBox.Text)
     tryjng.LoadDelay = 1
     tryjng.AutoStart = false
@@ -343,7 +349,7 @@ function driftfunc()
 end
 
 function racefunc()
-    local tryjng=require(game.Workspace.VehiclesFolder[tostring(TextBox_2.Text)]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
+    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
     tryjng.LoadDelay = 1
     tryjng.AutoStart = false
     tryjng.AutoFlip = true
@@ -477,7 +483,7 @@ end
 
 
 
-game.Workspace.VehiclesFolder[tostring(TextBox_2.Text)].DescendantAdded:Connect(function(descendant)
+game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))].DescendantAdded:Connect(function(descendant)
     wait(1)
     if dmgEnabled == true then
         if reachType == "Drift" then
