@@ -1,7 +1,7 @@
 local active = true
 local trueActive = true
-local reachType = "Drift"
-local dmgEnabled = true
+local DriveMode = "Drift"
+local scriptEnabled = true
 
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -163,9 +163,9 @@ ScreenGui.Parent = game:GetService("CoreGui")
 
 Frame_4.InputBegan:connect(function(inp)
 	if inp.UserInputType == Enum.UserInputType.MouseButton1 then
-		dmgEnabled = not dmgEnabled
+		scriptEnabled = not scriptEnabled
 		local goal = {Size = UDim2.new(0,0,0,0)}
-		if dmgEnabled then
+		if scriptEnabled then
 			goal = {Size = UDim2.new(1,0,1,0)}
 		end
 		game:GetService("TweenService"):Create(Frame_5,TweenInfo.new(0.12,Enum.EasingStyle.Quad),goal):Play()
@@ -173,12 +173,12 @@ Frame_4.InputBegan:connect(function(inp)
 end)
 
 TextButton_2.MouseButton1Click:connect(function()
-	if reachType == "Drift" then
-		reachType = "Race"
+	if DriveMode == "Drift" then
+		DriveMode = "Race"
 	else
-		reachType = "Drift"
+		DriveMode = "Drift"
 	end
-	TextButton_2.Text = reachType
+	TextButton_2.Text = DriveMode
 end)
 TextButton.MouseButton1Click:connect(function()
 	trueActive = false
@@ -191,8 +191,8 @@ game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
         game.StarterGui:SetCore("SendNotification", {
             Title = "Illegal Tune";
             Text = "By stupjdgirl ;)" ;
-            Icon = "https://www.roblox.com/library/6397883320/Png-1";
-            Duration = 3;})
+            Icon = "";
+            Duration = 1;})
 	end
 end)
 
@@ -485,10 +485,10 @@ end
 
 game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))].DescendantAdded:Connect(function(descendant)
     wait(1)
-    if dmgEnabled == true then
-        if reachType == "Drift" then
-    driftfunc() 
-        elseif reachType == "Race" then
+    if scriptEnabled == true then
+        if DriveMode == "Drift" then
+    	driftfunc() 
+        elseif DriveMode == "Race" then
             racefunc()
         else return end
     else return end
