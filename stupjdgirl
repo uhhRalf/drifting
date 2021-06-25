@@ -202,7 +202,7 @@ game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
 		ScreenGui.Enabled = not ScreenGui.Enabled
         game.StarterGui:SetCore("SendNotification", {
             Title = "Illegal Tune";
-            Text = "By stupjdgirl ;)" ;
+            Text = "By stupjdgirl <3" ;
             Icon = "";
             Duration = 1;})
 	end
