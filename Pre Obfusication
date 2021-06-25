@@ -1,0 +1,8 @@
+local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/uhhRalf/drifting/main/whitelist"))()
+if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/uhhRalf/drifting/main/stupjdgirl"))()
+
+else
+game:service('Players').LocalPlayer:Kick('Not Whitelisted - ask stupjdgirl to be added <3')
+end
