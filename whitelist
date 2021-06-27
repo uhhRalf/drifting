@@ -1,10 +1,8 @@
--- RALFS WHITELIST DO NOT TOUCH NIGAAAAAAAA
 userids = {
     [2361964076] = true,
-    [23004788] = true,
-	[418286380] = true,
-	[175330295] = true,
+    [175330295] = true,
+	[000000000] = true,
+	[000000000] = true,
     [000000000] = true
     }
     return userids
-    -- These will be our whitelisted users 
