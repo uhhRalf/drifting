@@ -97,13 +97,7 @@ local DriveModeOptions = Page2.Dropdown({
 		DriveMode = value
 	end,
 	Options = {"Drift", "Race"}
-    Menu = {
-        Info = function(self)
-            UI.Banner({
-                Text = "Improves sky and deletes trees in Mt. Otsuki for improved visibility"
-            })
-        end,
-    }
+    
 })
 
 local AcOnText = Page2.TextField({
