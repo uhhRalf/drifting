@@ -1,226 +1,199 @@
-local active = true
-local trueActive = true
-local DriveMode = "Drift"
-local scriptEnabled = true
+local Players = game:GetService("Players")
+local MT = getrawmetatable(game)
+local OldIndex = MT. __index
+local OldNamecall = MT.__namecall
 
 
-local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local TextBox_2 = Instance.new("TextBox")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextLabel_4 = Instance.new("TextLabel")
-local TextLabel_5 = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-local Frame_2 = Instance.new("Frame")
-local Frame_3 = Instance.new("Frame")
-local Frame_4 = Instance.new("Frame")
-local Frame_5 = Instance.new("Frame")
-local TextButton_2 = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local UICorner_2 = Instance.new("UICorner")
-local UICorner_3 = Instance.new("UICorner")
-local UICorner_4 = Instance.new("UICorner")
-local UICorner_5 = Instance.new("UICorner")
---Properties:
-
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.DisplayOrder = 999999999
-ScreenGui.ResetOnSpawn = false
-
-Frame.Parent = ScreenGui
-Frame.AnchorPoint = Vector2.new(0, 0.5)
-Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Frame.BackgroundTransparency = 0
-Frame.BorderColor3 = Color3.fromRGB(242, 128, 191)
-Frame.BorderSizePixel = 4
-Frame.Position = UDim2.new(0, 0, 0.6, 0)
-Frame.Size = UDim2.new(0.15, 0, 0.3, 0)
-Frame.Draggable = true
-Frame.Active = true
-Frame.Selectable = true
-UICorner.Parent = Frame
-
-
-
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextLabel.BackgroundTransparency = 1
-TextLabel.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextLabel.Font = Enum.Font.SourceSansItalic
-TextLabel.Text = "Boost:"
-TextLabel.TextColor3 = Color3.fromRGB(255,255, 255)
-TextLabel.TextScaled = false
-TextLabel.TextSize = 45
-TextLabel.TextWrapped = true
-
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextBox.BackgroundTransparency = 0.8
-TextBox.Position = UDim2.new(0.5, 0, 0, 0)
-TextBox.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "1000"
-TextBox.TextColor3 = Color3.fromRGB(242, 128, 191)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
-UICorner_2.Parent = TextBox
-
-TextBox_2.Parent = Frame
-TextBox_2.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextBox_2.BackgroundTransparency = 0.8
-TextBox_2.Position = UDim2.new(0.5, 0, 0.6, 0)
-TextBox_2.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextBox_2.Font = Enum.Font.SourceSans
-TextBox_2.Text = game.Players.LocalPlayer.Name
-TextBox_2.TextColor3 = Color3.fromRGB(242, 128, 191)
-TextBox_2.TextScaled = true
-TextBox_2.TextSize = 14.000
-TextBox_2.TextWrapped = true
-UICorner_3.Parent = TextBox_2
-
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0, 0, 0.2, 0)
-TextLabel_2.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextLabel_2.Font = Enum.Font.SourceSansItalic
-TextLabel_2.Text = "Type:"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = false
-TextLabel_2.TextSize = 45
-TextLabel_2.TextWrapped = true
-
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0, 0, 0.4, 0)
-TextLabel_3.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextLabel_3.Font = Enum.Font.SourceSansItalic
-TextLabel_3.Text = "Toggle:"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = false
-TextLabel_3.TextSize = 45.000
-TextLabel_3.TextWrapped = true
-
-TextLabel_5.Parent = Frame
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BackgroundTransparency = 0.8
-TextLabel_5.Position = UDim2.new(0.5, 0, 0.4, 0)
-TextLabel_5.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextLabel_5.Font = Enum.Font.SourceSansItalic
-TextLabel_5.Text = ""
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextScaled = false
-TextLabel_5.TextSize = 0
-TextLabel_5.TextWrapped = true
-UICorner_4.Parent = TextLabel_5
-
-TextLabel_4.Parent = Frame
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.Position = UDim2.new(0, 0, 0.6, 0)
-TextLabel_4.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextLabel_4.Font = Enum.Font.SourceSansItalic
-TextLabel_4.Text = "Player:"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextScaled = false
-TextLabel_4.TextSize = 45.000
-TextLabel_4.TextWrapped = true
-
-TextButton.Parent = Frame
-TextButton.AnchorPoint = Vector2.new(0, 1)
-TextButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextButton.BackgroundTransparency = 1.000
-TextButton.Position = UDim2.new(0, 0, 1, 0)
-TextButton.Size = UDim2.new(1, 0, 0.15, 0)
-TextButton.Font = Enum.Font.SourceSansItalic
-TextButton.Text = "(B to toggle GUI)"
-TextButton.TextColor3 = Color3.fromRGB(242, 128, 191)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-
-Frame_3.Parent = Frame_2
-Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame_3.BackgroundColor3 = Color3.fromRGB(242, 128, 191)
-Frame_3.BorderSizePixel = 0
-Frame_3.LayoutOrder = 1
-Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
-
-Frame_4.Parent = Frame
-Frame_4.Active = true
-Frame_4.AnchorPoint = Vector2.new(0, 0.5)
-Frame_4.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-Frame_4.BorderSizePixel = 0
-Frame_4.Position = UDim2.new(0.725, 0, 0.5, 0)
-Frame_4.Size = UDim2.new(0, 25, 0, 25)
-Frame_4.ZIndex = 5
-
-Frame_5.Parent = Frame_4
-Frame_5.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame_5.BackgroundColor3 = Color3.fromRGB(242, 128, 191)
-Frame_5.BorderSizePixel = 0
-Frame_5.LayoutOrder = 1
-Frame_5.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame_5.Size = UDim2.new(1, 0, 1, 0)
-
-TextButton_2.Parent = Frame
-TextButton_2.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextButton_2.BackgroundTransparency = 0.8
-TextButton_2.Position = UDim2.new(0.5, 0, 0.2, 0)
-TextButton_2.Size = UDim2.new(0.5, 0, 0.2, 0)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "Drift"
-TextButton_2.TextColor3 = Color3.fromRGB(242, 128, 191)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14
-TextButton_2.TextWrapped = true
-UICorner_5.Parent = TextButton_2
-
-repeat wait() until game.Players.LocalPlayer
-ScreenGui.Parent = game:GetService("CoreGui")
-
-
-
-Frame_4.InputBegan:connect(function(inp)
-	if inp.UserInputType == Enum.UserInputType.MouseButton1 then
-		scriptEnabled = not scriptEnabled
-		local goal = {Size = UDim2.new(0,0,0,0)}
-		if scriptEnabled then
-			goal = {Size = UDim2.new(1,0,1,0)}
+setreadonly(MT, false)
+MT.__index = newcclosure(function(H, HP, T, D) --Bypasses some anti FTI checks. (uBlubble, Xelvidant, etc.)
+	if not checkcaller() and getnamecallmethod() then
+		if tostring(H) == "Humanoid" and tostring(HP) == "Health" then
+			return 0
 		end
-		game:GetService("TweenService"):Create(Frame_5,TweenInfo.new(0.12,Enum.EasingStyle.Quad),goal):Play()
+		if tostring(T) == "Position" and tostring(D) == "Magnitude" then
+			return 0
+		end
 	end
+	return OldIndex(H, HP)
 end)
 
-TextButton_2.MouseButton1Click:connect(function()
-	if DriveMode == "Drift" then
-		DriveMode = "Race"
-	else
-		DriveMode = "Drift"
+local StarterGui = game:GetService("StarterGui")
+local DevConsoleHook --Bypasses all dev console disablers.
+DevConsoleHook = hookfunc(StarterGui.SetCore, newcclosure(function(Self, ...)
+	local Args = table.pack(...)
+	if Self == StarterGui then
+		if Args[1] == "DevConsoleVisible" then
+			Args[1] = nil
+		end
 	end
-	TextButton_2.Text = DriveMode
-end)
-TextButton.MouseButton1Click:connect(function()
-	trueActive = false
-	ScreenGui:Destroy()
-end)
-game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
-	if gpe then return end
-	if inp.KeyCode == Enum.KeyCode.B then
-		ScreenGui.Enabled = not ScreenGui.Enabled
-        game.StarterGui:SetCore("SendNotification", {
-            Title = "Illegal Tune";
-            Text = "By stupjdgirl ;)" ;
-            Icon = "https://www.roblox.com/library/6397883320/Png-1";
-            Duration = 3;})
-	end
-end)
+end))
+
+--Bypasses script execution.
+for _,v in next, getconnections(game:GetService("LogService").MessageOut) do
+	v:Disable()
+end
+for _,v in next, getconnections(game:GetService("ScriptContext").Error) do
+	v:Disable()
+end
+
+game:GetService("ScriptContext"):SetTimeout(0.1)
+setreadonly(MT, true) 
+
+local UNIATTEMPT = true
+local VisualizerTransparencyAmount = 0.6
+local UIS = game:GetService("UserInputService")
+
+-----------------------------
+--bypass 2
+local customtheme = "Dark"
+local BoostMulti = 1000
+local scriptEnabled = true
+local DriveMode = "Drift"
+local playername = game.Players.LocalPlayer.Name
+local CustomTime = true
+local cTime = 12
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+local UI = Material.Load({
+	Title = "Stupjdgirl's Tuner <3",
+	Style = 1,
+	SizeX = 300,
+	SizeY = 300,
+	Theme = customtheme
+})
+
+
+local Page2 = UI.New({
+	Title = "Illegal Mod"
+})
+local Page = UI.New({
+	Title = "Extras"
+})
+
+local BoostSize = Page2.Slider({
+	Text = "Boost Multiplier",
+	Callback = function(value)
+		BoostMulti = value
+		BoostMulti = tonumber(value)
+	end,
+	Min = 0,
+	Max = 1000,
+	Def = 1000
+    
+})
+
+local scriptEnabled1 = Page2.Toggle({
+	Text = "Enable Tune",
+	Callback = function(value)
+		scriptEnabled = value
+	end,
+    Enabled = true
+})
+
+
+local DriveModeOptions = Page2.Dropdown({
+	Text = "Tune Type",
+	Callback = function(value)
+		DriveMode = value
+	end,
+	Options = {"Drift", "Race"}
+    Menu = {
+        Info = function(self)
+            UI.Banner({
+                Text = "Improves sky and deletes trees in Mt. Otsuki for improved visibility"
+            })
+        end,
+    }
+})
+
+local AcOnText = Page2.TextField({
+	Text = game.Players.LocalPlayer.Name,
+	Callback = function(value)
+        playername = value
+        print (getPlayer(playername))
+	end,
+    Menu = {
+        Info = function(self)
+            UI.Banner({
+                Text = "Set this to the user's car you want to tune (They will have to respawn their car and will only work for you)"
+            })
+            self.SetText(game.Players.LocalPlayer.Name)
+
+        end,
+    }
+})
+
+
+local LowDetailMode = Page.Button({
+    Text = "Low Detail Mode",
+    Callback = function()
+        game.Lighting.Skybox:Destroy()
+        while true do
+            game.Workspace.NewOtsukiTree:Destroy()
+            wait(0)
+        end
+           
+    end,
+    Menu = {
+        Info = function(self)
+            UI.Banner({
+                Text = "Improves sky and deletes trees in Mt. Otsuki for improved visibility"
+            })
+        end,
+    }
+})
+
+local CtimeEnable = Page.Toggle({
+    Text = "Custom Time",
+    Callback = function(value)
+        CustomTime = value
+        print (value)
+    end,
+
+})
+
+local cTimeSlider = Page.Slider({
+    Text = "Time (Hours)",
+    Callback = function(value)
+        cTime = value
+        cTime = tonumber(value)
+
+    end,
+    Min = 0,
+	Max = 24,
+	Def = 12
+})
+
+local LowerCar = Page.Button({
+    Text = "Lower Car",
+    Callback = function()
+        local wheel = game.Workspace.VehiclesFolder[tostring(game.Players.LocalPlayer)]:FindFirstChildOfClass("Model").Wheels
+        wheel.RR.Size = Vector3.new(2,2,2)
+        wheel.FR.Size = Vector3.new(2,2,2)
+        wheel.FL.Size = Vector3.new(2,2,2)
+        wheel.RL.Size = Vector3.new(2,2,2)
+    end,
+    Menu = {
+        Info = function(self)
+            UI.Banner({
+                Text = "Your car will appear to have lowered suspension to others"
+            })
+        end,
+    }
+})
+
+local HideName = Page.Button({
+    Text = "Hide Name (Requires Chair Gamepass)",
+    Callback = function()
+        local humanoidroot = game.Workspace[tostring(game.Players.LocalPlayer.Name)].HumanoidRootPart
+        local currentPosition = humanoidroot.CFrame
+        humanoidroot.CFrame = CFrame.new(0,10000,0) * CFrame.Angles(math.rad(45),0,0)
+        wait(0.1)
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DeployChair"):FireServer()
+        wait(0.1)
+        humanoidroot.CFrame = currentPosition
+    end,
+})
 
 function getPlayer(shortcut)
     local player = nil
@@ -237,12 +210,9 @@ function getPlayer(shortcut)
   
 end
 
-
-
-
 function driftfunc()
-    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
-    tryjng.Boost = tonumber(TextBox.Text)
+    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(playername))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
+    tryjng.Boost = tonumber(BoostMulti)
     tryjng.LoadDelay = 1
     tryjng.AutoStart = false
     tryjng.AutoFlip = true
@@ -375,7 +345,7 @@ function driftfunc()
 end
 
 function racefunc()
-    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
+    local tryjng=require(game.Workspace.VehiclesFolder[tostring(getPlayer(playername))]:FindFirstChildOfClass("Model"):FindFirstChildOfClass("ModuleScript"))
     tryjng.LoadDelay = 1
     tryjng.AutoStart = false
     tryjng.AutoFlip = true
@@ -507,15 +477,25 @@ function racefunc()
     tryjng.LgcyPBForce = 25000
 end
 
+game.Workspace.VehiclesFolder[tostring(getPlayer(playername))].DescendantAdded:Connect(function(descendant)
 
-
-game.Workspace.VehiclesFolder[tostring(getPlayer(TextBox_2.Text))].DescendantAdded:Connect(function(descendant)
     wait(1)
     if scriptEnabled == true then
         if DriveMode == "Drift" then
-    driftfunc() 
+    	driftfunc() 
         elseif DriveMode == "Race" then
             racefunc()
         else return end
     else return end
  end)
+
+ while true do
+    wait()    
+    while CustomTime == true do
+        wait()
+        game.Lighting.ClockTime = (cTime)
+        if CustomTime == false then
+            break
+        end
+    end
+end
