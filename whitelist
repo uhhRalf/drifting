@@ -1,8 +1,0 @@
-userids = {
-    [2361964076] = true,
-    [175330295] = true,
-	[000000000] = true,
-	[000000000] = true,
-    [000000000] = true
-    }
-    return userids
